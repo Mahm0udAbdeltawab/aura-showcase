@@ -13,8 +13,7 @@
 | Success rate under load | **99.94%** |
 | Requests served in load test | **571,000+** |
 | Average response time | **276 ms** |
-| Simulated concurrent users (k6) | **3,000** |
-| Distributed stress-test capacity | 25 nodes × 200 VUs = **5,000 concurrent users** |
+| Simulated concurrent users (k6, distributed: 12 nodes × 250 VUs) | **3,000** |
 | Load-balancer failover detection | **~45 s** with automatic failback |
 
 ![Grafana — Azure Container Apps burst/failover dashboard](assets/garfana_1.png)
@@ -65,7 +64,7 @@ Client
 
 ## Load testing & observability
 
-- **k6** stress workflows in GitHub Actions, including a distributed mode (25 runners × 200 VUs)
+- **k6** stress workflows in GitHub Actions, including a distributed mode (12 runners × 250 VUs)
 - **Locust** registration scenarios on Azure Load Testing engines, run in-region (France Central) to measure true system latency without runner bottlenecks
 - **Grafana** dashboards for on-prem and Azure burst tiers (CPU, memory, HTTP throughput, replicas, restarts)
 
